@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0000999999975" prefWidth="950.0" style="-fx-background-color:#9f9f9f;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.CustomersTableController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="600.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="800.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <HBox prefHeight="25.302154541015625" prefWidth="686.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0">
+              <children>
+                <Button id="saveButton" fx:id="addCustButton" mnemonicParsing="false" onAction="#addCustomer" prefHeight="26.0" prefWidth="150.0" text="Add Customer" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="60.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="updateCustButton" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="25.3021240234375" prefWidth="150.0" text="Update Customer" HBox.hgrow="NEVER" />
+                <Pane minWidth="-1.0" prefHeight="200.0" prefWidth="60.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="deleteCustButton" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="25.3021240234375" prefWidth="150.0" text="Delete Customer" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="60.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="manageApptsButton" mnemonicParsing="false" onAction="#appointmentsTable" prefHeight="25.3021240234375" prefWidth="170.0" text="Manage Appointments" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="60.0" HBox.hgrow="SOMETIMES" />
+                <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="26.0" prefWidth="205.0" text="Generate Reports and Exit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#reports" text="Generate Reports" fx:id="reportsSelection" />
+                    <MenuItem mnemonicParsing="false" onAction="#exitApplication" text="Exit" fx:id="exitSelection" />
+                  </items>
+                </MenuButton>
+              </children>
+            </HBox>
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" x="0.0" y="0.0" AnchorPane.leftAnchor="49.0" AnchorPane.topAnchor="15.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <TableView id="apptTable" fx:id="custTable" prefHeight="467.02" prefWidth="688.0" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="41.98">
+              <columns>
+                <TableColumn prefWidth="75.0" resizable="false" text="Customer ID" fx:id="customerIDColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="First Name" fx:id="firstNameColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Middle Initial" fx:id="middleInitColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Last Name" fx:id="lastNameColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Address" fx:id="addressColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Apt. No." fx:id="aptNoColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Country" fx:id="countryColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="City" fx:id="cityColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Postal Code" fx:id="postalCodeColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Phone No." fx:id="phoneColumn" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="31.0" prefWidth="273.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="10.0">
+              <children>
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" text="Search" />
+                <Pane prefHeight="200.0" prefWidth="15.0" HBox.hgrow="NEVER" />
+                <TextField fx:id="searchBar" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

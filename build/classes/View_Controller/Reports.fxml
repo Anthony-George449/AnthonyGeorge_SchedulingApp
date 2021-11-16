@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color:#9f9f9f;&#10;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.ReportsController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="600.0000999999975" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="1000.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <Text id="monthTimezone" fx:id="week" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Week: 2020-04-05 through 2020-04-13" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="55.0" />
+            <HBox prefHeight="25.302154541015625" prefWidth="838.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0">
+              <children>
+                <Button id="saveButton" fx:id="countTypesButton" mnemonicParsing="false" onAction="#countType" prefHeight="26.0" prefWidth="250.0" text="Count Appointment Types for the Month" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="60.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="countCountryButton" mnemonicParsing="false" onAction="#countCountry" prefHeight="25.3021240234375" prefWidth="250.0" text="Count Customers in Each Country" HBox.hgrow="NEVER" />
+                <Pane minWidth="-1.0" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="closeButton" mnemonicParsing="false" onAction="#close" prefHeight="25.3021240234375" prefWidth="100.0" text="Close" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Schedule" x="0.0" y="0.0" AnchorPane.leftAnchor="49.0" AnchorPane.topAnchor="15.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <Text id="monthTimezone" fx:id="zone" strokeType="OUTSIDE" strokeWidth="0.0" text="Timezone: Los Angeles/PST" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="55.0" />
+            <TableView fx:id="apptTable" prefHeight="467.02" prefWidth="688.0" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="41.98">
+              <columns>
+                <TableColumn prefWidth="75.0" resizable="false" text="Appointment ID" fx:id="apptIDColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Customer ID" fx:id="custIDColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Username" fx:id="userColumn" />
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" resizable="false" text="Customer First" fx:id="customerFirstColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Customer M" fx:id="customerMColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Customer Last" fx:id="customerLastColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Appointment Type" fx:id="typeColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Date" fx:id="dateColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Start Time" fx:id="startTimeColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="End Time" fx:id="endTimeColumn" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="31.0" prefWidth="371.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="10.0">
+              <children>
+                <MenuButton mnemonicParsing="false" popupSide="BOTTOM" text="Filter">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#monthlySelection" text="Show Monthly Schedule" fx:id="monthlySelection" />
+                    <MenuItem mnemonicParsing="false" onAction="#weeklySelection" text="Show Weekly Schedule" fx:id="weeklySelection" />
+                    <MenuItem mnemonicParsing="false" onAction="#noneSelection" text="None" fx:id="noneSelection" />
+                  </items>
+                </MenuButton>
+                <Pane prefHeight="200.0" prefWidth="30.0" HBox.hgrow="SOMETIMES" />
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" text="Search" />
+                <Pane prefHeight="200.0" prefWidth="15.0" HBox.hgrow="NEVER" />
+                <TextField fx:id="searchBar" prefWidth="200.0" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

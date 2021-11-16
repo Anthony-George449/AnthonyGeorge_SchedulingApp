@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color:#9f9f9f;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.MonthlyScheduleController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="500.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="600.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <Text id="monthTimezone" fx:id="scheduleTimezone" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Timezone is PST" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="55.0" />
+            <HBox prefHeight="25.302154541015625" prefWidth="686.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0">
+              <children>
+                <Button id="saveButton" fx:id="manageApptsButton" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="178.0" text="Manage Appointments" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="80.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="manageCustsButton" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.3021240234375" prefWidth="178.0" text="Manage Customers" HBox.hgrow="NEVER" />
+                <Pane minWidth="-1.0" prefHeight="200.0" prefWidth="80.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="generateReptsButton" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.3021240234375" prefWidth="178.0" text="Generate Reports" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="130.0" HBox.hgrow="ALWAYS" />
+                <Button id="saveButton" fx:id="exitButton" minWidth="50.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="100.0" text="Exit" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Schedule" x="0.0" y="0.0" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="16.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <MenuButton maxWidth="-1.0" minHeight="-1.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" text="View By" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="10.0">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Month" fx:id="viewByMonth" />
+                <MenuItem mnemonicParsing="false" text="Week" fx:id="viewByWeek" />
+              </items>
+            </MenuButton>
+            <AnchorPane minHeight="-1.0" prefHeight="370.0" prefWidth="490.0" style="" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="41.0">
+              <children>
+                <VBox prefHeight="370.0" prefWidth="488.0" style="-fx-background-color:#bfbfbf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-1.0">
+                  <children>
+                    <HBox prefHeight="20.0" prefWidth="486.9998779296875" VBox.vgrow="NEVER">
+                      <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Sunday" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Monday" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Tuesday" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Wednesday" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Thursday" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Friday" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Saturday" HBox.hgrow="ALWAYS" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="70.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                      <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay1" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts1" layoutY="22.0" opacity="1.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay2" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts2" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay3" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts3" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay4" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts4" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay5" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts5" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay6" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts6" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text id="monthDay1" fx:id="monthDay7" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts7" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="70.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                      <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay8" layoutX="2.0" layoutY="13.0" scaleX="1.309192897041063" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts8" layoutY="22.0" opacity="1.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay9" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts9" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay10" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.000006265295975" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts10" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay11" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts11" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay12" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts12" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay13" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="0.9999937347040251" strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts13" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay14" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.000006265295975" strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts14" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="70.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                      <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay15" layoutX="3.0" layoutY="13.0" scaleX="0.9999922705315962" scaleY="1.0031892437591776" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts15" layoutY="22.0" opacity="1.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text id="monthDay1" fx:id="monthDay16" layoutX="3.0" layoutY="13.0" scaleX="1.0000077294684038" scaleY="0.9999937347040251" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts16" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay17" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0000076480665687" strokeType="OUTSIDE" strokeWidth="0.0" text="17" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts17" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay18" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts18" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay19" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts19" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay20" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts20" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay21" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts21" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="70.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                      <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay22" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts22" layoutY="22.0" opacity="1.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay23" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts23" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay24" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts24" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay25" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts25" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay26" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="26" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts26" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay27" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="27" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts27" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay28" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="28" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts28" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="70.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                      <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay29" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="29" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts29" layoutY="22.0" opacity="1.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay30" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts30" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay31" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0000076480665687" strokeType="OUTSIDE" strokeWidth="0.0" text="31" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts31" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay32" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="32" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts32" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay33" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="33" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts33" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay34" layoutX="3.0" layoutY="13.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="34" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts34" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="70.0" prefWidth="70.0" snapToPixel="false" style="-fx-border-color:#000000;" HBox.hgrow="ALWAYS">
+                          <children>
+                            <Text fx:id="monthDay35" layoutX="3.0" layoutY="13.0" scaleX="1.0821067330917875" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" textAlignment="RIGHT" />
+                            <ComboBox fx:id="monthAppts35" layoutY="22.0" prefHeight="21.0" prefWidth="64.0" promptText="Appts" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                          <padding>
+                            <Insets />
+                          </padding>
+                        </AnchorPane>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="500.0" style="-fx-background-color:#9f9f9f;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.AddCustomerController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="-1.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="300.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="498.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <VBox prefHeight="300.0" prefWidth="270.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="42.0">
+              <children>
+                <HBox minHeight="-Infinity" prefHeight="50.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="208.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First*" AnchorPane.leftAnchor="0.0">
+                          <font>
+                            <Font name="Arial" size="15.0" fx:id="x1" />
+                          </font>
+                        </Text>
+                        <TextField fx:id="firstNameField" layoutY="14.0" prefWidth="100.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="7.0" />
+                      </children>
+                    </AnchorPane>
+                    <Pane prefHeight="200.0" prefWidth="25.0" HBox.hgrow="NEVER" />
+                    <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="81.71630859375" HBox.hgrow="NEVER">
+                      <children>
+                        <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M" AnchorPane.leftAnchor="0.0" />
+                        <TextField fx:id="middleInitField" layoutX="22.0" layoutY="14.0" prefWidth="30.0" />
+                      </children>
+                    </AnchorPane>
+                    <Pane prefHeight="200.0" prefWidth="25.0" HBox.hgrow="NEVER" />
+                    <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="199.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last*" AnchorPane.leftAnchor="0.0" />
+                        <TextField fx:id="lastNameField" layoutY="14.0" prefWidth="100.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="38.0" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+                <HBox minHeight="-Infinity" prefHeight="50.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <AnchorPane minHeight="-Infinity" prefHeight="72.0" prefWidth="325.0" HBox.hgrow="ALWAYS">
+                      <children>
+                        <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address*" AnchorPane.leftAnchor="0.0" />
+                        <TextField fx:id="addressField" layoutY="14.0" prefWidth="240.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="25.0" />
+                      </children>
+                    </AnchorPane>
+                    <Pane prefHeight="72.0" prefWidth="10.0" HBox.hgrow="NEVER" />
+                    <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="81.71630859375" HBox.hgrow="ALWAYS">
+                      <children>
+                        <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apt." AnchorPane.leftAnchor="0.0" />
+                        <TextField fx:id="aptField" layoutX="38.0" layoutY="14.0" prefWidth="30.0" />
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </HBox>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country*" AnchorPane.leftAnchor="0.0" />
+                    <TextField id="countryFiel" fx:id="countryField" layoutY="14.0" prefWidth="240.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="143.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City*" AnchorPane.leftAnchor="0.0" />
+                    <TextField fx:id="cityField" layoutY="14.0" prefWidth="240.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="143.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal No.*" AnchorPane.leftAnchor="0.0" />
+                    <TextField id="phoneField" fx:id="postalField" layoutY="14.0" prefWidth="240.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="143.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone*" AnchorPane.leftAnchor="0.0" />
+                    <TextField fx:id="phoneField" layoutY="14.0" prefWidth="240.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="143.0" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </VBox>
+            <HBox prefHeight="26.0" prefWidth="166.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="14.0">
+              <children>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveAndReturn" prefHeight="25.3021240234375" prefWidth="70.0" text="Save" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="30.0" HBox.hgrow="NEVER" />
+                <Button id="saveButton" fx:id="cancelButton" minWidth="50.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="70.0" text="Cancel" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Customer" x="0.0" y="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="15.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <Text id="monthTimezone" strokeType="OUTSIDE" strokeWidth="0.0" text="* indicates required field" AnchorPane.bottomAnchor="39.99" AnchorPane.leftAnchor="14.0" />
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.CountTypeController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="400.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="600.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="550.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <Button id="saveButton" fx:id="closeButton" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="102.0" text="Close" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="55.0" />
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Appointment Types this Month" x="0.0" y="0.0" AnchorPane.leftAnchor="111.0" AnchorPane.topAnchor="7.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <TableView id="apptTable" fx:id="typeTable" prefHeight="289.02" prefWidth="488.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="41.98">
+              <columns>
+                <TableColumn prefWidth="75.0" resizable="false" text="Type" fx:id="typeColumn" />
+                <TableColumn prefWidth="75.0" resizable="false" text="Number" fx:id="countColumn" />
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

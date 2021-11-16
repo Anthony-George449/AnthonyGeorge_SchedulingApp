@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="320.0" style="-fx-background-color:#9f9f9f;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.UpdateAppointmentController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="-1.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="300.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <VBox prefHeight="300.0" prefWidth="270.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="42.0">
+              <children>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" AnchorPane.leftAnchor="0.0">
+                      <font>
+                        <Font name="Arial" size="15.0" fx:id="x1" />
+                      </font>
+                    </Text>
+                    <ComboBox fx:id="customerBox" layoutY="13.0" prefHeight="21.0" prefWidth="182.6458740234375" promptText="" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" AnchorPane.leftAnchor="0.0" />
+                    <TextField fx:id="typeField" layoutY="12.0" prefWidth="182.6458740234375" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" AnchorPane.leftAnchor="0.0" />
+                    <TextField id="typeField" fx:id="dateField" layoutY="13.0" prefWidth="182.6458740234375" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="29.25" strokeType="OUTSIDE" strokeWidth="0.0" text="Length" AnchorPane.leftAnchor="0.0" />
+                    <MenuButton fx:id="lengthButton" layoutY="14.0" mnemonicParsing="false" prefWidth="182.6458740234375" text="" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#fifteenLength" text="15 Minutes" fx:id="fifteenSelection" />
+                        <MenuItem mnemonicParsing="false" onAction="#thirtyLength" text="30 Minutes" fx:id="thirtySelection" />
+                        <MenuItem mnemonicParsing="false" onAction="#fourtyfiveLength" text="45 Minutes" fx:id="fourtyfiveSelection" />
+                        <MenuItem mnemonicParsing="false" onAction="#hourLength" text="60 Minutes" fx:id="hourSelection" />
+                      </items>
+                    </MenuButton>
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="100.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text font="$x1" layoutY="29.25" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" AnchorPane.leftAnchor="0.0" />
+                    <ComboBox fx:id="startTimeBox" layoutY="14.0" onAction="#setEndTimeBox" prefHeight="21.0" prefWidth="183.0" visibleRowCount="10" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                    <Text layoutY="54.0" scaleX="1.0" scaleY="1.0000070771408351" strokeType="OUTSIDE" strokeWidth="0.0" text="to" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="172.0">
+                      <font>
+                        <Font name="Arial" size="13.0" />
+                      </font>
+                    </Text>
+                    <MenuButton id="lengthButton" fx:id="endTimeBox" disable="true" layoutY="65.0" mnemonicParsing="false" opacity="0.5" prefWidth="183.0" text="" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </VBox>
+            <HBox prefHeight="26.0" prefWidth="166.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="14.0">
+              <children>
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveAndReturn" prefHeight="25.3021240234375" prefWidth="70.0" text="Save" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="30.0" HBox.hgrow="NEVER" />
+                <Button id="saveButton" fx:id="cancelButton" minWidth="50.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="70.0" text="Cancel" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Appointment" x="0.0" y="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="15.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

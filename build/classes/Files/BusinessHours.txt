@@ -1,0 +1,3 @@
+If you would like to change the Business Hours only change the times, leave everything else as is.
+Open: 08:00:00
+Close: 17:00:00

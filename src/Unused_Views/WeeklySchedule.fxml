@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="800.0" prefWidth="1205.0" style="-fx-background-color:#9f9f9f;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.WeeklyScheduleController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="800.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="1200.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="600.0" minWidth="600.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <AnchorPane minHeight="-1.0" prefHeight="370.0" prefWidth="490.0" style="" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="41.0">
+              <children>
+                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="667.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="1087.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <content>
+                    <AnchorPane id="Content" fx:id="listLengthPane" minHeight="-Infinity" minWidth="0.0" prefHeight="850.0" prefWidth="1059.0">
+                      <children>
+                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="1086.0" style="-fx-background-color:#bfbfbf;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
+                          <children>
+                            <HBox minWidth="240.0" prefHeight="20.0" prefWidth="486.9998779296875" VBox.vgrow="NEVER">
+                              <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Time" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Sunday" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Monday" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Tuesday" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Wednesday" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Thursday" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Friday" HBox.hgrow="ALWAYS" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="70.0" style="-fx-border-color:#000000;" text="Saturday" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                            <HBox minWidth="240.0" prefHeight="-1.0" prefWidth="486.9998779296875" VBox.vgrow="ALWAYS">
+                              <children>
+                                <ListView fx:id="weekListTime" editable="false" maxHeight="-1.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="70.0" style="" HBox.hgrow="NEVER" />
+                                <ListView fx:id="weekListSun" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListMon" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListTues" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListWed" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListThur" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListFri" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                                <ListView fx:id="weekListSat" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="144.0" style="" HBox.hgrow="ALWAYS" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </ScrollPane>
+              </children>
+            </AnchorPane>
+            <HBox prefHeight="23.975296020507812" prefWidth="248.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="11.0">
+              <children>
+                <MenuButton mnemonicParsing="false" text="Select Dates" HBox.hgrow="NEVER">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Action 1" fx:id="menuWeek1" />
+                    <MenuItem mnemonicParsing="false" text="Action 2" fx:id="menuWeek2" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek3" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek4" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek5" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek6" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek7" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek8" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek9" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek10" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek11" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek12" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek13" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek14" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" fx:id="menuWeek15" />
+                  </items>
+                </MenuButton>
+                <Pane prefHeight="200.0" prefWidth="52.0" HBox.hgrow="SOMETIMES" />
+                <MenuButton maxWidth="-1.0" minHeight="-1.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" text="View By" HBox.hgrow="NEVER">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Month" fx:id="viewByMonth" />
+                    <MenuItem mnemonicParsing="false" text="Week" fx:id="viewByWeek" />
+                  </items>
+                </MenuButton>
+              </children>
+            </HBox>
+            <Text id="monthTimezone" fx:id="scheduleTimezone" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Timezone is PST" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="55.0" />
+            <Text fill="#001066" scaleX="1.8147265035511708" scaleY="1.7272939129725189" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Schedule" x="0.0" y="0.0" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="16.0">
+              <font>
+                <Font name="Arial Bold" size="12.0" />
+              </font>
+            </Text>
+            <HBox prefHeight="25.302154541015625" prefWidth="686.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0">
+              <children>
+                <Button id="saveButton" fx:id="manageApptsButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" text="Manage Appointments" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="80.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="manageCustsButton" mnemonicParsing="false" prefHeight="25.3021240234375" prefWidth="178.0" text="Manage Customers" HBox.hgrow="NEVER" />
+                <Pane minWidth="-1.0" prefHeight="200.0" prefWidth="80.0" HBox.hgrow="SOMETIMES" />
+                <Button id="saveButton" fx:id="generateReptsButton" mnemonicParsing="false" prefHeight="25.3021240234375" prefWidth="178.0" text="Generate Reports" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="130.0" HBox.hgrow="ALWAYS" />
+                <Button id="saveButton" fx:id="exitButton" minWidth="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Exit" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="150.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View_Controller.LoginScreenController">
+  <children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" pannable="true" prefHeight="150.0" prefViewportHeight="400.0" prefViewportWidth="400.0" prefWidth="300.0" style="-fx-background-color:#9f9f9f;&#10;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color:#9f9f9f;">
+          <children>
+            <VBox prefHeight="100.0" prefWidth="270.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0">
+              <children>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text fx:id="userText" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" AnchorPane.leftAnchor="0.0">
+                      <font>
+                        <Font name="Arial" size="15.0" fx:id="x1" />
+                      </font>
+                    </Text>
+                    <TextField fx:id="userField" layoutY="14.0" prefWidth="220.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="-Infinity" prefHeight="50.0" prefWidth="270.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <Text fx:id="passwordText" font="$x1" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" AnchorPane.leftAnchor="0.0" />
+                    <PasswordField fx:id="passwordField" layoutY="14.0" prefWidth="220.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </VBox>
+            <HBox prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="14.0">
+              <children>
+                <Button id="saveButton" fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="25.3021240234375" prefWidth="100.0" text="Login" HBox.hgrow="NEVER" />
+                <Pane prefHeight="200.0" prefWidth="30.0" HBox.hgrow="NEVER" />
+                <Button id="saveButton" fx:id="exitButton" minWidth="50.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="26.0" prefWidth="100.0" text="Exit" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </children>
+</AnchorPane>
